@@ -68,3 +68,6 @@ models/*
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+
+data/captures
