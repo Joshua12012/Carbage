@@ -123,8 +123,6 @@ edge_app/
 │   ├── yolov8n_static_int8.onnx   # YOLOv8n INT8 quantized (~1.5 MB)
 │   ├── yolov8n_fp16.onnx          # YOLOv8n FP16 precision (~2.8 MB)
 │   └── yolov8n_fp32.onnx          # YOLOv8n FP32 full precision (~5.5 MB)
-├── static/               # Static web assets for FastAPI
-│   └── index.html
 ├── .gitignore            # Git exclusion rules
 └── README.md             # Project documentation
 ```

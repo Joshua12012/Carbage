@@ -3,7 +3,6 @@ import sqlite3
 import time
 from datetime import datetime
 from fastapi import FastAPI, File, HTTPException, UploadFile
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from inference import WasteClassifier
 
@@ -90,5 +89,11 @@ def get_stats():
         ).fetchall()
     return {r[0]: r[1] for r in rows}
 
-os.makedirs("static", exist_ok=True)
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+@app.get("/")
+def root():
+    return {
+        "title": "Edge Waste Segregation API",
+        "status": "online",
+        "docs": "/docs",
+        "models": "/models",
+    }
